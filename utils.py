@@ -46,17 +46,23 @@ def configurarEscuta(socket, hosts):
 def aceitarConexao(socket):
     return socket.accept()
 
-def receberDados(socket, tamanho_do_buffer = 1024):
-    return socket.recv(tamanho_do_buffer)
-
+def receberDados(socket, tamanho_do_buffer = 1024, tipo_de_socket):
+    if tipo_de_socket == socket.SOCK_STREAM:
+        return socket.recv(tamanho_do_buffer)
+    else:
+        return socket.recvfrom(tamanho_do_buffer)
+    
 def decodificarDados(dados):
     return dados.decode("utf-8")
 
 def encodificarDados(dados):
     return dados.encode("utf-8")
 
-def enviarDados(socket, dados):
-    socket.send(dados)
+def enviarDados(socket, dados, tipo_de_socket):
+    if tipo_de_socket == socket.SOCK_DGRAM:
+        socket.sendto(dados)
+    else:
+        socket.send(dados)
 
 def fecharSocket(socket):
     socket.close()
