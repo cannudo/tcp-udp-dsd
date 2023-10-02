@@ -10,6 +10,9 @@ def aguardar_enter():
 def setAny(foo):
     return foo
 
+def getPathStr(host, porta):
+    return str("{}:{}".format(host, porta))
+
 def getFamilia(tipo_de_endereco = "IPV4"):
     if tipo_de_endereco == "IPV4":
         retorno = socket.AF_INET
@@ -46,7 +49,7 @@ def configurarEscuta(socket, hosts):
 def aceitarConexao(socket):
     return socket.accept()
 
-def receberDados(socket, tamanho_do_buffer = 1024, tipo_de_socket):
+def receberDados(socket, tamanho_do_buffer = 1024, tipo_de_socket = socket.SOCK_STREAM):
     if tipo_de_socket == socket.SOCK_STREAM:
         return socket.recv(tamanho_do_buffer)
     else:
