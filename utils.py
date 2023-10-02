@@ -40,20 +40,20 @@ def getTipoDeSocket(tipo_de_socket = "TCP"):
 def instanciarSocket(familia, tipo_de_socket):
     return socket.socket(familia, tipo_de_socket)
 
-def configurarSocket(socket, host, porta):
-    socket.bind((host, porta))
+def configurarSocket(socket_, host, porta):
+    socket_.bind((host, porta))
 
-def configurarEscuta(socket, hosts):
-    socket.listen(hosts)
+def configurarEscuta(socket_, hosts):
+    socket_.listen(hosts)
 
-def aceitarConexao(socket):
-    return socket.accept()
+def aceitarConexao(socket_):
+    return socket_.accept()
 
-def receberDados(socket, tamanho_do_buffer = 1024, tipo_de_socket = socket.SOCK_STREAM):
+def receberDados(socket_, tamanho_do_buffer = 1024, tipo_de_socket = socket.SOCK_STREAM):
     if tipo_de_socket == socket.SOCK_STREAM:
-        return socket.recv(tamanho_do_buffer)
+        return socket_.recv(tamanho_do_buffer)
     else:
-        return socket.recvfrom(tamanho_do_buffer)
+        return socket_.recvfrom(tamanho_do_buffer)
     
 def decodificarDados(dados):
     return dados.decode("utf-8")
@@ -61,15 +61,21 @@ def decodificarDados(dados):
 def encodificarDados(dados):
     return dados.encode("utf-8")
 
-def enviarDados(socket, dados, tipo_de_socket):
+def enviarDados(socket_, dados, tipo_de_socket):
     if tipo_de_socket == socket.SOCK_DGRAM:
-        socket.sendto(dados)
+        socket_.sendto(dados)
     else:
-        socket.send(dados)
+        socket_.send(dados)
 
-def fecharSocket(socket):
-    socket.close()
+def enviarDadosEmBroadcast(socket_, dados, broadcast_host, porta):
+    log("[📨] Enviados para " + getPathStr(broadcast_host, porta) + " : " + decodificarDados(dados))
+    socket_.sendto(dados, (broadcast_host, porta))
 
-def conectarSocket(socket, host, porta):
-    socket.connect((host, porta))
+def ativarBroadcast(socket_):
+    socket_.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
+def fecharSocket(socket_):
+    socket_.close()
+
+def conectarSocket(socket_, host, porta):
+    socket_.connect((host, porta))
