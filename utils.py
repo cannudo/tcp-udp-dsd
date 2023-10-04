@@ -14,11 +14,11 @@ def getPathStr(host, porta):
     return str("{}:{}".format(host, porta))
 
 def getFamilia(tipo_de_endereco = "IPV4"):
-    if tipo_de_endereco == "IPV4":
+    if tipo_de_endereco.upper() == "IPV4":
         retorno = socket.AF_INET
-    elif tipo_de_endereco == "IPV6":
+    elif tipo_de_endereco.upper() == "IPV6":
         retorno = socket.AF_INET6
-    elif tipo_de_endereco == "LOCAL":
+    elif tipo_de_endereco.upper() == "LOCAL":
         retorno = socket.AF_UNIX
 
     return retorno
@@ -43,7 +43,7 @@ def instanciarSocket(familia, tipo_de_socket):
 def configurarSocket(socket_, host, porta):
     socket_.bind((host, porta))
 
-def configurarEscuta(socket_, hosts):
+def escutar(socket_, hosts):
     socket_.listen(hosts)
 
 def aceitarConexao(socket_):
