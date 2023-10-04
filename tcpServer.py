@@ -11,7 +11,7 @@ def loop_servidor(socket_servidor):
     while True:
         socket_cliente, endereco_cliente = utils.aceitarConexao(socket_servidor)
         utils.log("[🤝 loop_servidor(): Conexão aceita de " + utils.getPathStr(endereco_cliente[0], endereco_cliente[1]) + "]")
-        dados = utils.receberDados(socket_cliente, BUFFER_SIZE)
+        dados = utils.receberDados(socket_cliente, BUFFER_SIZE, TIPO_DE_SOCKET)
         utils.log("[📨 loop_servidor(): Dados recebidos de " + utils.getPathStr(endereco_cliente[0], endereco_cliente[1]) + " : " + utils.decodificarDados(dados) + "]")
         socket_cliente.close()
 
