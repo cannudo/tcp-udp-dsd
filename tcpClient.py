@@ -22,6 +22,7 @@ def iniciarCliente():
     socket_cliente = utils.instanciarSocket(FAMILIA, TIPO_DE_SOCKET)
     utils.log("[📡 iniciarCliente(): Cliente TCP configurado em " + SERVER_PATH + "]")
     utils.conectarSocket(socket_cliente, SERVER_HOST, SERVER_PORT)
+    utils.receberDados(socket_cliente, BUFFER_SIZE, TIPO_DE_SOCKET)
 
     return socket_cliente
 

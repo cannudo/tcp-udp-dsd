@@ -13,6 +13,7 @@ def loop_servidor(socket_servidor):
         utils.log("[🤝 loop_servidor(): Conexão aceita de " + utils.getPathStr(endereco_cliente[0], endereco_cliente[1]) + "]")
         dados = utils.receberDados(socket_cliente, BUFFER_SIZE, TIPO_DE_SOCKET)
         utils.log("[📨 loop_servidor(): Dados recebidos de " + utils.getPathStr(endereco_cliente[0], endereco_cliente[1]) + " : " + utils.decodificarDados(dados) + "]")
+        utils.enviarDados(socket_cliente, utils.encodificarDados(dados), TIPO_DE_SOCKET)
         socket_cliente.close()
 
 def colocarServidorNaEscuta(socket_servidor):
