@@ -1,30 +1,37 @@
-import utils
+import utils, socket
 
-SERVER_HOST = utils.setAny('127.0.0.1')
-SERVER_PORT = utils.setAny(5001)
-SERVER_PATH = utils.getPathStr(SERVER_HOST, SERVER_PORT)
-BUFFER_SIZE = utils.setAny(1024)
-FAMILIA = utils.getFamilia("IPV4")
-TIPO_DE_SOCKET = utils.getTipoDeSocket("TCP")
+def iniciar_cliente(host, porta):
+    familia = utils.getFamilia("IPV4")  # Use o padrão IPv4
+    tipo_socket = utils.getTipoDeSocket("TCP")  # Use o padrão TCP
+    cliente_socket = utils.instanciarSocket(familia, tipo_socket)
 
-print(FAMILIA)
-print(TIPO_DE_SOCKET)
+    try:
+        utils.conectarSocket(cliente_socket, host, porta)
+        utils.log("[🔗] Conectado ao servidor em {}".format(utils.getPathStr(host, porta)))
 
-def loop_cliente(socket_cliente):
-    while True:
-        dados = 'dados'
-        utils.enviarDados(socket_cliente, utils.encodificarDados(dados), TIPO_DE_SOCKET)
-        utils.log("[📨 loop_cliente(): Dados enviados para " + SERVER_PATH + " : " + dados + "]")
-        dados = utils.receberDados(socket_cliente, BUFFER_SIZE, TIPO_DE_SOCKET)
-        utils.log("[📨 loop_cliente(): Dados recebidos de " + SERVER_PATH + " : " + utils.decodificarDados(dados) + "]")
+        while True:
+            mensagem = input("\t[⌨️] Digite uma mensagem para enviar ao servidor (ou 'sair' para encerrar): ")
+            if mensagem.lower() == 'sair':
+                break
 
-def iniciarCliente():
-    socket_cliente = utils.instanciarSocket(FAMILIA, TIPO_DE_SOCKET)
-    utils.log("[📡 iniciarCliente(): Cliente TCP configurado em " + SERVER_PATH + "]")
-    utils.conectarSocket(socket_cliente, SERVER_HOST, SERVER_PORT)
-    utils.receberDados(socket_cliente, BUFFER_SIZE, TIPO_DE_SOCKET)
+            dados = utils.encodificarDados(mensagem)
+            utils.enviarDados(cliente_socket, dados, tipo_socket)
 
-    return socket_cliente
+            # Recebe a resposta do servidor
+            dados_resposta = utils.receberDados(cliente_socket)
+            if not dados_resposta:
+                break
 
-socket_cliente = iniciarCliente()
-loop_cliente(socket_cliente)
+            resposta = utils.decodificarDados(dados_resposta)
+            utils.log("\t[📨] Mensagem recebida do servidor: {}".format(resposta))
+
+    except KeyboardInterrupt:
+        print("Cliente encerrado.")
+    finally:
+        cliente_socket.close()
+
+
+host = "127.0.0.1"  # Endereço do servidor
+porta = 1234  # Porta do servidor
+
+iniciar_cliente(host, porta)
