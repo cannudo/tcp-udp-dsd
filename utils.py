@@ -61,9 +61,9 @@ def decodificarDados(dados):
 def encodificarDados(dados):
     return dados.encode("utf-8")
 
-def enviarDados(socket_, dados, tipo_de_socket):
+def enviarDados(socket_, dados, tipo_de_socket, host_e_porta):
     if tipo_de_socket == socket.SOCK_DGRAM:
-        socket_.sendto(dados)
+        socket_.sendto(dados, host_e_porta)
     else:
         socket_.send(dados)
 

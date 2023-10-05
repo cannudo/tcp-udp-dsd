@@ -31,7 +31,7 @@ def iniciar_cliente(host, porta):
         cliente_socket.close()
 
 
-host = "127.0.0.1"  # Endereço do servidor
-porta = 1234  # Porta do servidor
+host = utils.setAny("127.0.0.1")
+porta = utils.setAny(1234)
 
 iniciar_cliente(host, porta)
