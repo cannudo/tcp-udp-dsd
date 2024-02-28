@@ -23,5 +23,10 @@ class ServidorTCP():
         self.tipo = utils.getTipoDeSocket("TCP")
         self.escuta = self.configurar()
 
-servidor = ServidorTCP('127.0.0.1', 1235, "IPV4")
-servidor.rodar()
+
+class ServidorUDP():
+    def __init__(self, host, porta, familia):
+        self.host = host
+        self.porta = porta
+        self.tipo = utils.getTipoDeSocket("UDP")
+        self.familia = utils.getFamilia(familia.upper())
