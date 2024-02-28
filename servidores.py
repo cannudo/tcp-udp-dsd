@@ -25,8 +25,22 @@ class ServidorTCP():
 
 
 class ServidorUDP():
+    def escutar(self):
+        mensagem, endereco = utils.receberDados(self.escuta)
+        print(f"Recebi a mensagem: {mensagem.decode('utf-8')}")
+        utils.fecharSocket(self.escuta)
+
+    def configurar(self):
+        server_socket = utils.instanciarSocket(self.familia, self.tipo)
+        utils.configurarSocket(server_socket, self.host, self.porta)
+        return server_socket
+
     def __init__(self, host, porta, familia):
         self.host = host
         self.porta = porta
         self.tipo = utils.getTipoDeSocket("UDP")
         self.familia = utils.getFamilia(familia.upper())
+        self.escuta = self.configurar()
+
+s = ServidorUDP("localhost", 5000, "ipv4")
+s.escutar()
