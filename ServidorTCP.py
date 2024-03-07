@@ -26,7 +26,7 @@ class ServidorTCP():
         instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
         return instancia
 
-    def __init__(self, familia, maquina, porta, tamanho_maximo):
+    def __init__(self, familia, maquina, porta):
         self.familia = familia
         self.maquina = maquina
         self.porta = porta
@@ -34,8 +34,7 @@ class ServidorTCP():
         self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.configurarSocketParaEscutarNoEndereco(self.maquina, self.porta)
         self.habilitarModoDeEscuta(5)
-        self.loop(tamanho_maximo)
-
         
-s = ServidorTCP("IPV4", 'localhost', 8082, 2048)
+s = ServidorTCP("IPV4", 'localhost', 8082)
+s.loop(2048)
 print(s)
