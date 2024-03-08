@@ -2,6 +2,25 @@ import socket
 import  utils
 
 class ClienteTCP():
+    def encerrarConexao(self):
+        self.socket_cliente.close()
+        print("[🔌 Conexão encerrada]")
+
+    def interagirComServidor(self, mensagem):
+        self.enviarDados(mensagem)
+        resposta = self.receberResposta(self.tamanho_maximo)
+        print("[📬 Resposta do servidor:]")
+        print("    [%s]" % resposta)
+
+    def conectarAoServidor(self):
+        endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)
+        print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
+        try:
+            self.socket_cliente.connect(endereco_do_servidor)
+            print("[✅ conectado 🔗]")
+        except ConnectionRefusedError:
+            print("[❌ conexão recusada pelo servidor]")
+
     def receberResposta(self, tamanho_maximo):
         try:
             resposta_codificada = self.socket_cliente.recv(tamanho_maximo)
@@ -29,17 +48,9 @@ class ClienteTCP():
         self.socket_cliente = self.instanciarSocket(self.familia)
         endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)
         print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
-        try:
-            self.socket_cliente.connect(endereco_do_servidor)
-            print("[✅ conectado 🔗]")
-            self.enviarDados("Olá, mundo!")
-            resposta = self.receberResposta(self.tamanho_maximo)
-            print("[📬 Resposta do servidor:]")
-            print("    [%s]" % resposta)
-        except ConnectionRefusedError:
-            print("[❌ conexão recusada pelo servidor]")
-
-        # TODO NÃO ACABOU BONITA
+        
 
 c = ClienteTCP("IPV4", 'localhost', 8082, 2048)
-print(c)
+c.conectarAoServidor()
+c.interagirComServidor("Olá, servidor =D")
+c.encerrarConexao()
