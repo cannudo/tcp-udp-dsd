@@ -9,7 +9,8 @@ class ServidorTCP():
             dados = socket_cliente.recv(tamanho_maximo)
             if dados:
                 print("[📦 dados recebidos de %s]:" % str(endereco_cliente))
-                socket_cliente.send("Recebido")
+                print("    [%s]" % dados.decode('utf-8'))
+                socket_cliente.send("Olá, cliente =)".encode('utf-8'))
                 socket_cliente.close()
                 # TODO mais coisas
 
