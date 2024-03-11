@@ -48,9 +48,3 @@ class ClienteTCP():
         self.socket_cliente = self.instanciarSocket(self.familia)
         endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)
         print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
-        
-
-c = ClienteTCP("IPV4", 'localhost', 8082, 2048)
-c.conectarAoServidor()
-c.interagirComServidor("Olá, servidor =D")
-c.encerrarConexao()

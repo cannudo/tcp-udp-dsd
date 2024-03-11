@@ -72,8 +72,3 @@ class ServidorTCP():
         self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.configurarSocketParaEscutarNoEndereco(self.maquina, self.porta)
         self.habilitarModoDeEscuta(5)
-        
-s = ServidorTCP("IPV4", 'localhost', 8082)
-s.aceitarConexao()
-s.enviarDados("Olá, cliente!")
-s.receberDados(2048)
