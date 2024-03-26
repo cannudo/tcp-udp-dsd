@@ -66,9 +66,9 @@ class ServidorTCP():
     def __init__(self, familia, maquina, porta, buffer, fila):
         self.familia = familia
         self.maquina = maquina
-        self.porta = porta
-        self.buffer = buffer
-        self.fila = fila
+        self.porta = int(porta)
+        self.buffer = int(buffer)
+        self.fila = int(fila)
         self.socket_cliente, self.endereco_cliente = None, None
         self.socket_servidor = self.instanciarSocket(self.familia)
         self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
