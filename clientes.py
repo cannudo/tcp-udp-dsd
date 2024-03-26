@@ -28,6 +28,16 @@ class ClienteTCP():
         except socket.error as e:
             print("[❌ Erro ao receber resposta: %s]" % str(e))
 
+    def enviarBase64(self, base64_string):
+        if self.socket_cliente:
+            try:
+                self.socket_cliente.send(base64_string)
+            except socket.error as e:
+                print("[❌ Erro ao enviar dados: %s]" % str(e))
+        else:
+            print("[❌ Nenhuma conexão ativa para enviar dados]")
+
+
     def enviarDados(self, mensagem):
         try:
             mensagem_codificada = mensagem.encode("utf-8")

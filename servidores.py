@@ -10,6 +10,20 @@ class ServidorTCP():
         else:
             print("[❌ Nenhuma conexão ativa para encerrar]")
 
+    def receberBase64(self):
+        if self.socket_cliente:
+            try:
+                dados = self.socket_cliente.recv(self.buffer)
+                if dados:
+                    print("[📦 dados recebidos de %s]:" % str(self.endereco_cliente))
+                    print("    [%s]" % dados)
+                return dados
+            except socket.error as e:
+                print("[❌ Erro ao receber dados: %s]" % str(e))
+            else:
+                print("[❌ Nenhuma conexão ativa para receber dados]")
+            return None
+
     def receberDados(self):
         if self.socket_cliente:
             try:
@@ -24,6 +38,15 @@ class ServidorTCP():
             else:
                 print("[❌ Nenhuma conexão ativa para receber dados]")
             return None
+
+    def enviarBase64(self, base64_string):
+        if self.socket_cliente:
+            try:
+                self.socket_cliente.send(base64_string)
+            except socket.error as e:
+                print("[❌ Erro ao enviar dados: %s]" % str(e))
+        else:
+            print("[❌ Nenhuma conexão ativa para enviar dados]")
 
     def enviarDados(self, mensagem):
         if self.socket_cliente:
