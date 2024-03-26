@@ -21,9 +21,9 @@ class ClienteTCP():
         except ConnectionRefusedError:
             print("[❌ conexão recusada pelo servidor]")
 
-    def receberResposta(self, tamanho_maximo):
+    def receberResposta(self):
         try:
-            resposta_codificada = self.socket_cliente.recv(tamanho_maximo)
+            resposta_codificada = self.socket_cliente.recv(self.buffer)
             return resposta_codificada.decode('utf-8')
         except socket.error as e:
             print("[❌ Erro ao receber resposta: %s]" % str(e))
@@ -40,10 +40,10 @@ class ClienteTCP():
          instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
          return instancia
 
-    def __init__(self, familia, maquina_servidor, porta_servidor, tamanho_maximo):
+    def __init__(self, familia, maquina_servidor, porta_servidor, buffer):
         self.familia = familia
         self.maquina_servidor = maquina_servidor
-        self.tamanho_maximo = tamanho_maximo
+        self.buffer = buffer
         self.porta_servidor = porta_servidor
         self.socket_cliente = self.instanciarSocket(self.familia)
         endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)

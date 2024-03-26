@@ -10,10 +10,10 @@ class ServidorTCP():
         else:
             print("[❌ Nenhuma conexão ativa para encerrar]")
 
-    def receberDados(self, tamanho_maximo):
+    def receberDados(self):
         if self.socket_cliente:
             try:
-                dados_codificados = self.socket_cliente.recv(tamanho_maximo)
+                dados_codificados = self.socket_cliente.recv(self.buffer)
                 if dados_codificados:
                     dados_decodificados = dados_codificados.decode("utf-8")
                     print("[📦 dados recebidos de %s]:" % str(self.endereco_cliente))
@@ -40,9 +40,9 @@ class ServidorTCP():
         self.socket_cliente, self.endereco_cliente = self.socket_servidor.accept()
         print("[✅ Conexão aceita de %s]" % str(self.endereco_cliente))
 
-    def loop(self, tamanho_maximo):
+    def loop(self):
         while True:
-            dados = self.socket_cliente.recv(tamanho_maximo)
+            dados = self.socket_cliente.recv(self.buffer)
             if dados:
                 print("[📦 dados recebidos de %s]:" % str(self.endereco_cliente))
                 print("    [%s]" % dados.decode('utf-8'))
@@ -63,15 +63,17 @@ class ServidorTCP():
         instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
         return instancia
 
-    def __init__(self, familia, maquina, porta):
+    def __init__(self, familia, maquina, porta, buffer, fila):
         self.familia = familia
         self.maquina = maquina
         self.porta = porta
+        self.buffer = buffer
+        self.fila = fila
         self.socket_cliente, self.endereco_cliente = None, None
         self.socket_servidor = self.instanciarSocket(self.familia)
         self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.configurarSocketParaEscutarNoEndereco(self.maquina, self.porta)
-        self.habilitarModoDeEscuta(5)
+        self.habilitarModoDeEscuta(self.fila)
 
 class ServidorUDP():
     def enviarDados(self, mensagem, endereco):

@@ -1,6 +1,6 @@
 import servidores
 
-servidor = servidores.ServidorTCP("ipv4", "localhost", 1234)
+servidor = servidores.ServidorTCP("ipv4", "localhost", 1234, 65500, 10)
 servidor.aceitarConexao()
-servidor.receberDados(65500)
+servidor.receberDados()
 servidor.enviarDados("E aí, clieeente =D")
