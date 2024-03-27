@@ -14,15 +14,12 @@ class ServidorTCP():
         if self.socket_cliente:
             try:
                 dados = self.socket_cliente.recv(self.buffer)
-                if dados:
-                    print("[📦 dados recebidos de %s]:" % str(self.endereco_cliente))
-                    print("    [%s]" % dados)
                 return dados
             except socket.error as e:
                 print("[❌ Erro ao receber dados: %s]" % str(e))
-            else:
-                print("[❌ Nenhuma conexão ativa para receber dados]")
-            return None
+        else:
+            print("[❌ Nenhuma conexão ativa para receber dados]")
+        return None
 
     def receberDados(self):
         if self.socket_cliente:
