@@ -14,13 +14,14 @@ BUFFER = sys.argv[4]
 FILA = sys.argv[5]
 
 def receberBase64PorPartes(self):
-    base64_data = b''  # Inicializa uma string de bytes vazia para armazenar os dados recebidos
+    receptor_do_base64 = b''
     while True:
-        fragment = self.receberBase64()  # Recebe um fragmento de dados
-        if not fragment:  # Verifica se não há mais dados para receber
+        fragmento = self.receberBase64()
+        if not fragmento:
             break
-        base64_data += fragment  # Concatena o fragmento recebido à string de bytes
-    return base64_data
+        receptor_do_base64 += fragmento
+    base64_completo = receptor_do_base64
+    return base64_completo
 
 servidor = ServidorTCP(FAMILIA_DE_SOCKETS, MAQUINA, PORTA, BUFFER, FILA)
 servidor.aceitarConexao()

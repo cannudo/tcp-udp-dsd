@@ -4,14 +4,14 @@ import base64
 cliente = ClienteTCP("ipv4", "localhost", 1234, 65536)
 cliente.conectarAoServidor()
 
-def enviarBase64PorPartes(base64_data, fragment_size=1024):
-    total_size = len(base64_data)
-    offset = 0
-    while offset < total_size:
-        end_offset = min(offset + fragment_size, total_size)
-        fragment = base64_data[offset:end_offset]
-        cliente.enviarBase64(fragment)
-        offset = end_offset
+def enviarBase64PorPartes(base64_completo, fragment_size=1024):
+    tamanho_do_base64 = len(base64_completo)
+    deslocamento = 0
+    while deslocamento < tamanho_do_base64:
+        fim_do_deslocamento = min(deslocamento + fragment_size, tamanho_do_base64)
+        fragmento = base64_completo[deslocamento:fim_do_deslocamento]
+        cliente.enviarBase64(fragmento)
+        deslocamento = fim_do_deslocamento
 
 
 imagem = open('entrada.png', 'rb') # deer.gif deve existir, senão dá erro
