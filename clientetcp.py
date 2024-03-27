@@ -1,7 +1,15 @@
 from clientes import ClienteTCP
-import base64
+import base64, sys
 
-cliente = ClienteTCP("ipv4", "localhost", 1234, 65536)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Uso: python3 <maquina>")
+        sys.exit(1)
+
+
+MAQUINA = sys.argv[1]
+
+cliente = ClienteTCP("ipv4", MAQUINA, 1234, 2048)
 cliente.conectarAoServidor()
 
 def enviarBase64PorPartes(base64_completo, tamanho_do_fragmento):
