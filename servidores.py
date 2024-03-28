@@ -96,17 +96,17 @@ class ServidorTCP():
         self.habilitarModoDeEscuta(self.fila)
 
 class ServidorUDP():
-    def enviarDados(self, mensagem, endereco):
-        try:
-            mensagem_codificada = mensagem.encode("utf-8")
+    def enviarBytes(self, mensagem, endereco):
+        try: 
+            mensagem_codificada = str.encode(mensagem)
             self.socket_servidor.sendto(mensagem_codificada, endereco)
         except socket.error as e:
             print("[❌ Erro ao enviar dados: %s]" % str(e))
 
-    def receberDados(self, tamanho_maximo):
+    def receberBytes(self, tamanho_maximo):
         try:
-            dados_codificados, endereco_cliente = self.socket_servidor.recvfrom(tamanho_maximo)
-            dados_decodificados = dados_codificados.decode("utf-8")
+            bytes_recebidos = self.socket_servidor.recvfrom(tamanho_maximo)
+            return bytes_recebidos
         except socket.error as e:
             print("[❌ Erro ao receber dados: %s]" % str(e))
 

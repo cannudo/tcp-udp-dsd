@@ -60,17 +60,16 @@ class ClienteTCP():
         print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
 
 class ClienteUDP():
-    def receberDados(self, tamanho_maximo): # IMPORTANTE: atualmente receberDados() retorna uma str UTF-8 decodificada
-        dados_codificados = self.socket_servidor.recvfrom(tamanho_maximo)
-        dados_decodificados = dados_codificados.decode('utf-8')
-        return dados_decodificados
+    def receberBytes(self, tamanho_maximo): # IMPORTANTE: atualmente receberDados() retorna uma str UTF-8 decodificada
+        bytes_recebidos = self.socket_cliente.recvfrom(tamanho_maximo)
+        return bytes_recebidos
 
-    def enviarDados(self, mensagem, maquina_servidor, porta_servidor):
+    def enviarBytes(self, mensagem):
         if self.socket_cliente:
             try:
-                endereco_do_servidor = (maquina_servidor, porta_servidor)
-                mensagem_codificada = mensagem.encode('utf-8')
-                self.socket_cliente.sendto(mensagem_codificada, endereco_do_servidor)
+                endereco = (self.maquina_servidor, self.porta_servidor)
+                mensagem_codificada = str.encode(mensagem)
+                self.socket_cliente.sendto(mensagem_codificada, (self.maquina_servidor, self.porta_servidor))
             except socket.error as e:
                 print("[❌ erro ao enviar dados: %s ❌]" % str(e))
         else:
@@ -86,3 +85,4 @@ class ClienteUDP():
         self.maquina_servidor = maquina_servidor
         self.porta_servidor = porta_servidor
         self.socket_cliente = self.instanciarSocket(self.familia)
+        self.socket_cliente.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
