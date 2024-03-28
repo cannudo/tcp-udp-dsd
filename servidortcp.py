@@ -1,9 +1,9 @@
 import base64, sys, datetime
 from servidores import ServidorTCP
 
-def nomeDeUmaNovaImagem():
+def nomeDeUmaNovaImagem(nome_do_cliente):
     agora = datetime.datetime.now()
-    return str("image-received-at-{}-{}-{}-{}-{}-{}.png".format(agora.year, agora.month, agora.day, agora.hour, agora.minute, agora.second))
+    return str(nome_do_cliente + " ({}h{}m{}s).png".format(agora.hour, agora.minute, agora.second))
 
 def receberBase64PorPartes(self):
     receptor_do_base64 = b''
@@ -26,8 +26,10 @@ FILA = sys.argv[2]
 
 
 servidor = ServidorTCP("ipv4", MAQUINA, 1234, 2048, FILA)
-servidor.aceitarConexao()
-base64_recebido = receberBase64PorPartes(servidor)
-string_do_base64 = base64.b64decode(base64_recebido) 
-resultado = open('imagens/' + nomeDeUmaNovaImagem(), 'wb')
-resultado.write(string_do_base64)
+while True:
+    servidor.aceitarConexao()
+    nome_do_cliente = servidor.receberDados()
+    base64_recebido = receberBase64PorPartes(servidor)
+    string_do_base64 = base64.b64decode(base64_recebido) 
+    resultado = open('imagens/' + nomeDeUmaNovaImagem(nome_do_cliente), 'wb')
+    resultado.write(string_do_base64)

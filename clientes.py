@@ -37,6 +37,14 @@ class ClienteTCP():
         else:
             print("[❌ Nenhuma conexão ativa para enviar dados]")
 
+    def enviarBase64PorPartes(self, base64_completo, tamanho_do_fragmento):
+        tamanho_do_base64 = len(base64_completo)
+        deslocamento = 0
+        while deslocamento < tamanho_do_base64:
+            fim_do_deslocamento = min(deslocamento + tamanho_do_fragmento, tamanho_do_base64)
+            fragmento = base64_completo[deslocamento:fim_do_deslocamento]
+            self.enviarBase64(fragmento)
+            deslocamento = fim_do_deslocamento
 
     def enviarDados(self, mensagem):
         try:
