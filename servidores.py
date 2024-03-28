@@ -1,5 +1,6 @@
 import utils
 import socket
+import threading
 
 class ServidorTCP():
     def encerrarConexao(self):
@@ -96,6 +97,28 @@ class ServidorTCP():
         self.habilitarModoDeEscuta(self.fila)
 
 class ServidorUDP():
+    def receberDadosCliente(self, dados, endereco):
+        print(f'Dados recebidos de {endereco}: {dados}')
+
+    def receberClientes(self):
+        while True:
+            dados, endereco = self.socket_servidor.recvfrom(1024)
+            if endereco not in [cli[1] for cli in self.clientes_conectados]:
+                print(f'Novo cliente conectado: {endereco}')
+                self.clientes_conectados.append((dados, endereco))
+                threading.Thread(target = self.receberDadosCliente, args = (dados, endereco)).start()
+            else:
+                threading.Thread(target = self.receberDadosCliente, args = (dados, endereco)).start()
+
+    def enviarBytesPorBroadcast(self, mensagem):
+        try: 
+            mensagem_codificada = str.encode(mensagem)
+            self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+            self.socket_servidor.sendto(mensagem_codificada, ('<broadcast>', self.porta))
+            print("Mensagem enviada por broadcast.")
+        except socket.error as e:
+            print("[❌ Erro ao enviar dados: %s]" % str(e))
+    
     def enviarBytes(self, mensagem, endereco):
         try: 
             mensagem_codificada = str.encode(mensagem)
@@ -124,4 +147,3 @@ class ServidorUDP():
         self.maquina = maquina
         self.porta = porta
         self.socket_servidor = self.instanciarSocket(self.familia)
-        self.configurarSocketParaEscutarNoEndereco(self.maquina, self.porta)

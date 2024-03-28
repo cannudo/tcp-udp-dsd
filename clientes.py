@@ -1,5 +1,5 @@
 import socket
-import  utils
+import utils
 
 class ClienteTCP():
     def encerrarConexao(self):
@@ -78,11 +78,22 @@ class ClienteUDP():
     def instanciarSocket(self, familia):
         familia_de_sockets = utils.getFamilia(familia)
         instancia = socket.socket(familia_de_sockets, socket.SOCK_DGRAM)
+        instancia.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        instancia.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         return instancia
     
+    def receberMensagensEmBroadcast(self):
+        while True:
+            dados, endereco = self.socket_cliente.recvfrom(1024)
+            print(f"Mensagem recebida de {endereco}: {dados.decode()}")
+
+    def configurarSocketParaEscutarNoEndereco(self, porta):
+        endereco = ('', porta)
+        self.socket_cliente.bind(endereco)
+
     def __init__(self, familia, maquina_servidor, porta_servidor):
         self.familia = familia
         self.maquina_servidor = maquina_servidor
         self.porta_servidor = porta_servidor
         self.socket_cliente = self.instanciarSocket(self.familia)
-        self.socket_cliente.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.configurarSocketParaEscutarNoEndereco(self.porta_servidor)
