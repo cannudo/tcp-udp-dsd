@@ -1,7 +1,8 @@
 import socket
-import  utils
+import utils
 
-class ClienteTCP():
+
+class ClienteTCP:
     def encerrarConexao(self):
         self.socket_cliente.close()
         print("[🔌 Conexão encerrada]")
@@ -14,7 +15,10 @@ class ClienteTCP():
 
     def conectarAoServidor(self):
         endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)
-        print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
+        print(
+            "[🔌 tentando conectar à máquina %s ⏳]"
+            % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor))
+        )
         try:
             self.socket_cliente.connect(endereco_do_servidor)
             print("[✅ conectado 🔗]")
@@ -24,7 +28,7 @@ class ClienteTCP():
     def receberResposta(self, tamanho_maximo):
         try:
             resposta_codificada = self.socket_cliente.recv(tamanho_maximo)
-            return resposta_codificada.decode('utf-8')
+            return resposta_codificada.decode("utf-8")
         except socket.error as e:
             print("[❌ Erro ao receber resposta: %s]" % str(e))
 
@@ -36,9 +40,9 @@ class ClienteTCP():
             print("[❌ erro ao enviar dados: %s ❌]" % str(e))
 
     def instanciarSocket(self, familia):
-         familia_de_sockets = utils.getFamilia(familia)
-         instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
-         return instancia
+        familia_de_sockets = utils.getFamilia(familia)
+        instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
+        return instancia
 
     def __init__(self, familia, maquina_servidor, porta_servidor, tamanho_maximo):
         self.familia = familia
@@ -47,10 +51,13 @@ class ClienteTCP():
         self.porta_servidor = porta_servidor
         self.socket_cliente = self.instanciarSocket(self.familia)
         endereco_do_servidor = (self.maquina_servidor, self.porta_servidor)
-        print("[🔌 tentando conectar à máquina %s ⏳]" % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor)))
-        
+        print(
+            "[🔌 tentando conectar à máquina %s ⏳]"
+            % str(str(self.maquina_servidor) + ":" + str(self.porta_servidor))
+        )
 
-c = ClienteTCP("IPV4", 'localhost', 8082, 2048)
+
+c = ClienteTCP("IPV4", "localhost", 8082, 2048)
 c.conectarAoServidor()
 c.interagirComServidor("Olá, servidor =D")
 c.encerrarConexao()

@@ -1,6 +1,7 @@
 import utils
 
-class ClienteTCP():
+
+class ClienteTCP:
     def __init__(self, host, porta, familia):
         self.host = host
         self.porta = porta
@@ -8,7 +9,8 @@ class ClienteTCP():
         self.tipo = utils.getTipoDeSocket("TCP")
         self.escuta = utils.instanciarSocket(self.familia, self.tipo)
 
-class ClienteUDP():
+
+class ClienteUDP:
     def __init__(self, host, porta, familia):
         self.host = host
         self.porta = porta

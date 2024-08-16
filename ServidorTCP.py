@@ -1,7 +1,8 @@
 import utils
 import socket
 
-class ServidorTCP():
+
+class ServidorTCP:
     def encerrarConexao(self):
         if self.socket_cliente:
             self.socket_cliente.close()
@@ -36,7 +37,10 @@ class ServidorTCP():
             print("[❌ Nenhuma conexão ativa para enviar dados]")
 
     def aceitarConexao(self):
-        print("[🎧 Servidor TCP em modo de escuta no endereço %s]" % str(self.maquina + ":" + str(self.porta)))
+        print(
+            "[🎧 Servidor TCP em modo de escuta no endereço %s]"
+            % str(self.maquina + ":" + str(self.porta))
+        )
         self.socket_cliente, self.endereco_cliente = self.socket_servidor.accept()
         print("[✅ Conexão aceita de %s]" % str(self.endereco_cliente))
 
@@ -45,19 +49,18 @@ class ServidorTCP():
             dados = self.socket_cliente.recv(tamanho_maximo)
             if dados:
                 print("[📦 dados recebidos de %s]:" % str(self.endereco_cliente))
-                print("    [%s]" % dados.decode('utf-8'))
-                self.socket_cliente.send("Olá, cliente =)".encode('utf-8'))
+                print("    [%s]" % dados.decode("utf-8"))
+                self.socket_cliente.send("Olá, cliente =)".encode("utf-8"))
                 self.socket_cliente.close()
                 # TODO mais coisas
 
-
-    def habilitarModoDeEscuta(self, tamanho_da_fila = 5):
+    def habilitarModoDeEscuta(self, tamanho_da_fila=5):
         self.socket_servidor.listen(tamanho_da_fila)
 
     def configurarSocketParaEscutarNoEndereco(self, maquina, porta):
         endereco = (maquina, porta)
         self.socket_servidor.bind(endereco)
-    
+
     def instanciarSocket(self, familia):
         familia_de_sockets = utils.getFamilia(familia)
         instancia = socket.socket(familia_de_sockets, socket.SOCK_STREAM)
@@ -72,8 +75,9 @@ class ServidorTCP():
         self.socket_servidor.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.configurarSocketParaEscutarNoEndereco(self.maquina, self.porta)
         self.habilitarModoDeEscuta(5)
-        
-s = ServidorTCP("IPV4", 'localhost', 8082)
+
+
+s = ServidorTCP("IPV4", "localhost", 8082)
 s.aceitarConexao()
 s.enviarDados("Olá, cliente!")
 s.receberDados(2048)

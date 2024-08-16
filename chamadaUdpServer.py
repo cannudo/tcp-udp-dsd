@@ -1,6 +1,6 @@
 import utils
 
-HOST = '127.0.0.1'
+HOST = "127.0.0.1"
 PORTA = 1234
 TIPO_DE_SOCKET = utils.getTipoDeSocket("UDP")
 FAMILIA_DE_SOCKET = utils.getFamilia("IPV4")

@@ -11,3 +11,6 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+      - run: pip install black
+      - run: black --check .
+      - run: if [[ $? = 0 ]]; then exit 1; fi

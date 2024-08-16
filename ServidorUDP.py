@@ -1,7 +1,8 @@
 import utils
 import socket
 
-class ServidorUDP():
+
+class ServidorUDP:
     def enviarDados(self, mensagem, endereco):
         try:
             mensagem_codificada = mensagem.encode("utf-8")
@@ -11,7 +12,9 @@ class ServidorUDP():
 
     def receberDados(self, tamanho_maximo):
         try:
-            dados_codificados, endereco_cliente = self.socket_servidor.recvfrom(tamanho_maximo)
+            dados_codificados, endereco_cliente = self.socket_servidor.recvfrom(
+                tamanho_maximo
+            )
             dados_decodificados = dados_codificados.decode("utf-8")
         except socket.error as e:
             print("[❌ Erro ao receber dados: %s]" % str(e))

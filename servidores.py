@@ -1,6 +1,7 @@
 import utils
 
-class ServidorTCP():
+
+class ServidorTCP:
     def rodar(self):
         if self.escuta:
             cliente, endereco = utils.aceitarConexao(self.escuta)
@@ -24,7 +25,7 @@ class ServidorTCP():
         self.escuta = self.configurar()
 
 
-class ServidorUDP():
+class ServidorUDP:
     def escutar(self):
         mensagem, endereco = utils.receberDados(self.escuta)
         print(f"Recebi a mensagem: {mensagem.decode('utf-8')}")
@@ -41,6 +42,7 @@ class ServidorUDP():
         self.tipo = utils.getTipoDeSocket("UDP")
         self.familia = utils.getFamilia(familia.upper())
         self.escuta = self.configurar()
+
 
 s = ServidorUDP("localhost", 5000, "ipv4")
 s.escutar()
