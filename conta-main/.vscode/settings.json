@@ -1,0 +1,21 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "maven.view": "flat",
+    "maven.terminal.favorites": [
+        {
+            "command": "clean install",
+            "debug": false
+        },
+        {
+            "command": "validate",
+            "debug": false
+        },
+        {
+            "command": "clean verify",
+            "debug": false
+        }
+    ],
+    "files.encoding": "utf8",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true
+}

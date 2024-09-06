@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="444px" preserveAspectRatio="none" style="width:702px;height:444px;" version="1.1" viewBox="0 0 702 444" width="702px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fei70bwjvz2wp" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[bd36b5bc4d76692a759b95fc3b760034]
+cluster br.edu.ifrn.conta.dominio-->
+        <polygon fill="#FFFFFF" filter="url(#fei70bwjvz2wp)" points="16,6.602,200,6.602,207,31.6699,685,31.6699,685,437.602,16,437.602,16,6.602" style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="207" y1="31.6699" y2="31.6699"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="178" x="20" y="23.5679">br.edu.ifrn.conta.dominio</text>
+        <!--MD5=[37dd4a7a92a2443d2dd96b704bea1abc]
+class br.edu.ifrn.conta.dominio.Conta-->
+        <rect codeLine="1" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="62.9819" id="br.edu.ifrn.conta.dominio.Conta" style="stroke:#A80036;stroke-width:1.5;" width="75" x="475.5" y="186.602"/>
+        <ellipse cx="495.45" cy="202.602" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M490.6219,208.352 L493.9656,196.1645 L497.1063,196.1645 L500.4813,208.352 L498.0125,208.352 L497.2781,205.3364 L493.7625,205.3364 L493.0125,208.352 L490.6219,208.352 Z M495.0281,200.3051 L494.2781,203.3051 L496.7938,203.3051 L496.075,200.3051 Q495.9344,199.727 495.8094,199.1801 Q495.6844,198.6176 495.5438,198.0395 Q495.4344,198.6176 495.2938,199.1801 Q495.1531,199.727 495.0281,200.3051 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="32" x="510.55" y="207.258">Conta</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="476.5" x2="549.5" y1="218.602" y2="218.602"/>
+        <ellipse cx="486.5" cy="229.602" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="495.5" y="234.3609">descricao</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="476.5" x2="549.5" y1="241.5839" y2="241.5839"/>
+        <!--MD5=[f67c4fe2dbffc897d09e18a608432861]
+class br.edu.ifrn.conta.dominio.Categoria-->
+        <rect codeLine="4" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="62.9819" id="br.edu.ifrn.conta.dominio.Categoria" style="stroke:#A80036;stroke-width:1.5;" width="87" x="303.5" y="44.602"/>
+        <ellipse cx="318.5" cy="60.602" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M317.9688,67.5239 Q316.2188,67.5239 315.0781,66.7895 Q313.9531,66.0395 313.3906,64.6957 Q312.8438,63.3364 312.8438,61.5395 Q312.8438,59.5082 313.5,58.0551 Q314.1563,56.602 315.4375,55.8207 Q316.7188,55.0395 318.5938,55.0395 Q319.4844,55.0395 320.1563,55.227 Q320.8281,55.3989 321.5156,55.7426 L320.7031,57.7582 Q320.0781,57.4457 319.5313,57.3207 Q319,57.1957 318.5156,57.1957 Q317.3438,57.1957 316.6406,57.727 Q315.9375,58.2582 315.6406,59.2114 Q315.3438,60.1645 315.3438,61.4301 Q315.3438,63.4457 316.0625,64.4145 Q316.7813,65.3676 318.375,65.3676 Q318.9688,65.3676 319.5938,65.2114 Q320.2188,65.0551 321.0469,64.6801 L321.0469,66.8989 Q320.3125,67.2114 319.5156,67.3676 Q318.7344,67.5239 317.9688,67.5239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="55" x="332.5" y="65.258">Categoria</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="304.5" x2="389.5" y1="76.602" y2="76.602"/>
+        <ellipse cx="314.5" cy="87.602" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="323.5" y="92.3609">descricao</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="304.5" x2="389.5" y1="99.5839" y2="99.5839"/>
+        <!--MD5=[ec94e75842b8394a8e3c5ceb9eff4c1e]
+class br.edu.ifrn.conta.dominio.ContaCredito-->
+        <rect codeLine="7" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="48" id="br.edu.ifrn.conta.dominio.ContaCredito" style="stroke:#A80036;stroke-width:1.5;" width="106" x="563" y="52.102"/>
+        <ellipse cx="578" cy="68.102" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M577.4688,75.0239 Q575.7188,75.0239 574.5781,74.2895 Q573.4531,73.5395 572.8906,72.1957 Q572.3438,70.8364 572.3438,69.0395 Q572.3438,67.0082 573,65.5551 Q573.6563,64.102 574.9375,63.3207 Q576.2188,62.5395 578.0938,62.5395 Q578.9844,62.5395 579.6563,62.727 Q580.3281,62.8989 581.0156,63.2426 L580.2031,65.2582 Q579.5781,64.9457 579.0313,64.8207 Q578.5,64.6957 578.0156,64.6957 Q576.8438,64.6957 576.1406,65.227 Q575.4375,65.7582 575.1406,66.7114 Q574.8438,67.6645 574.8438,68.9301 Q574.8438,70.9457 575.5625,71.9145 Q576.2813,72.8676 577.875,72.8676 Q578.4688,72.8676 579.0938,72.7114 Q579.7188,72.5551 580.5469,72.1801 L580.5469,74.3989 Q579.8125,74.7114 579.0156,74.8676 Q578.2344,75.0239 577.4688,75.0239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74" x="592" y="72.758">ContaCredito</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="564" x2="668" y1="84.102" y2="84.102"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="564" x2="668" y1="92.102" y2="92.102"/>
+        <!--MD5=[1848eec233c9817ea0475a5f6ee8903d]
+class br.edu.ifrn.conta.dominio.ContaDebito-->
+        <rect codeLine="8" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="48" id="br.edu.ifrn.conta.dominio.ContaDebito" style="stroke:#A80036;stroke-width:1.5;" width="102" x="426" y="52.102"/>
+        <ellipse cx="441" cy="68.102" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M440.4688,75.0239 Q438.7188,75.0239 437.5781,74.2895 Q436.4531,73.5395 435.8906,72.1957 Q435.3438,70.8364 435.3438,69.0395 Q435.3438,67.0082 436,65.5551 Q436.6563,64.102 437.9375,63.3207 Q439.2188,62.5395 441.0938,62.5395 Q441.9844,62.5395 442.6563,62.727 Q443.3281,62.8989 444.0156,63.2426 L443.2031,65.2582 Q442.5781,64.9457 442.0313,64.8207 Q441.5,64.6957 441.0156,64.6957 Q439.8438,64.6957 439.1406,65.227 Q438.4375,65.7582 438.1406,66.7114 Q437.8438,67.6645 437.8438,68.9301 Q437.8438,70.9457 438.5625,71.9145 Q439.2813,72.8676 440.875,72.8676 Q441.4688,72.8676 442.0938,72.7114 Q442.7188,72.5551 443.5469,72.1801 L443.5469,74.3989 Q442.8125,74.7114 442.0156,74.8676 Q441.2344,75.0239 440.4688,75.0239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="70" x="455" y="72.758">ContaDebito</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="427" x2="527" y1="84.102" y2="84.102"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="427" x2="527" y1="92.102" y2="92.102"/>
+        <!--MD5=[16e10aacf6b0c7f2afe18804bf7fbcbd]
+class br.edu.ifrn.conta.dominio.ContaPatrimonio-->
+        <rect codeLine="9" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="48" id="br.edu.ifrn.conta.dominio.ContaPatrimonio" style="stroke:#A80036;stroke-width:1.5;" width="126" x="142" y="52.102"/>
+        <ellipse cx="157" cy="68.102" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M156.4688,75.0239 Q154.7188,75.0239 153.5781,74.2895 Q152.4531,73.5395 151.8906,72.1957 Q151.3438,70.8364 151.3438,69.0395 Q151.3438,67.0082 152,65.5551 Q152.6563,64.102 153.9375,63.3207 Q155.2188,62.5395 157.0938,62.5395 Q157.9844,62.5395 158.6563,62.727 Q159.3281,62.8989 160.0156,63.2426 L159.2031,65.2582 Q158.5781,64.9457 158.0313,64.8207 Q157.5,64.6957 157.0156,64.6957 Q155.8438,64.6957 155.1406,65.227 Q154.4375,65.7582 154.1406,66.7114 Q153.8438,67.6645 153.8438,68.9301 Q153.8438,70.9457 154.5625,71.9145 Q155.2813,72.8676 156.875,72.8676 Q157.4688,72.8676 158.0938,72.7114 Q158.7188,72.5551 159.5469,72.1801 L159.5469,74.3989 Q158.8125,74.7114 158.0156,74.8676 Q157.2344,75.0239 156.4688,75.0239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="94" x="171" y="72.758">ContaPatrimonio</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="143" x2="267" y1="84.102" y2="84.102"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="143" x2="267" y1="92.102" y2="92.102"/>
+        <!--MD5=[e0e26b38c3cd5a45b0fa552d7738ae76]
+class br.edu.ifrn.conta.dominio.Dono-->
+        <rect codeLine="10" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="62.9819" id="br.edu.ifrn.conta.dominio.Dono" style="stroke:#A80036;stroke-width:1.5;" width="75" x="31.5" y="44.602"/>
+        <ellipse cx="52.35" cy="60.602" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M51.8188,67.5239 Q50.0688,67.5239 48.9281,66.7895 Q47.8031,66.0395 47.2406,64.6957 Q46.6938,63.3364 46.6938,61.5395 Q46.6938,59.5082 47.35,58.0551 Q48.0063,56.602 49.2875,55.8207 Q50.5688,55.0395 52.4438,55.0395 Q53.3344,55.0395 54.0063,55.227 Q54.6781,55.3989 55.3656,55.7426 L54.5531,57.7582 Q53.9281,57.4457 53.3813,57.3207 Q52.85,57.1957 52.3656,57.1957 Q51.1938,57.1957 50.4906,57.727 Q49.7875,58.2582 49.4906,59.2114 Q49.1938,60.1645 49.1938,61.4301 Q49.1938,63.4457 49.9125,64.4145 Q50.6313,65.3676 52.225,65.3676 Q52.8188,65.3676 53.4438,65.2114 Q54.0688,65.0551 54.8969,64.6801 L54.8969,66.8989 Q54.1625,67.2114 53.3656,67.3676 Q52.5844,67.5239 51.8188,67.5239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="30" x="67.65" y="65.258">Dono</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="32.5" x2="105.5" y1="76.602" y2="76.602"/>
+        <ellipse cx="42.5" cy="87.602" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="51.5" y="92.3609">descricao</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="32.5" x2="105.5" y1="99.5839" y2="99.5839"/>
+        <!--MD5=[0ce798032832dd81ba09c6c1e0f34fc5]
+class br.edu.ifrn.conta.dominio.Lancamento-->
+        <rect codeLine="13" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="92.9457" id="br.edu.ifrn.conta.dominio.Lancamento" style="stroke:#A80036;stroke-width:1.5;" width="101" x="336.5" y="328.602"/>
+        <ellipse cx="351.5" cy="344.602" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M350.9688,351.5239 Q349.2188,351.5239 348.0781,350.7895 Q346.9531,350.0395 346.3906,348.6957 Q345.8438,347.3364 345.8438,345.5395 Q345.8438,343.5082 346.5,342.0551 Q347.1563,340.602 348.4375,339.8207 Q349.7188,339.0395 351.5938,339.0395 Q352.4844,339.0395 353.1563,339.227 Q353.8281,339.3989 354.5156,339.7426 L353.7031,341.7582 Q353.0781,341.4457 352.5313,341.3207 Q352,341.1957 351.5156,341.1957 Q350.3438,341.1957 349.6406,341.727 Q348.9375,342.2582 348.6406,343.2114 Q348.3438,344.1645 348.3438,345.4301 Q348.3438,347.4457 349.0625,348.4145 Q349.7813,349.3676 351.375,349.3676 Q351.9688,349.3676 352.5938,349.2114 Q353.2188,349.0551 354.0469,348.6801 L354.0469,350.8989 Q353.3125,351.2114 352.5156,351.3676 Q351.7344,351.5239 350.9688,351.5239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="365.5" y="349.258">Lancamento</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="337.5" x2="436.5" y1="360.602" y2="360.602"/>
+        <ellipse cx="347.5" cy="371.602" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="356.5" y="376.3609">valor</text>
+        <ellipse cx="347.5" cy="386.5839" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="23" x="356.5" y="391.3428">data</text>
+        <ellipse cx="347.5" cy="401.5658" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="356.5" y="406.3247">descricao</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="337.5" x2="436.5" y1="413.5476" y2="413.5476"/>
+        <!--MD5=[60267d6a6567c7eaa6adf523ec32236e]
+class br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio-->
+        <rect codeLine="18" fill="#FEFECE" filter="url(#fei70bwjvz2wp)" height="62.9819" id="br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio" style="stroke:#A80036;stroke-width:1.5;" width="250" x="190" y="186.602"/>
+        <ellipse cx="205" cy="202.602" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M204.4688,209.5239 Q202.7188,209.5239 201.5781,208.7895 Q200.4531,208.0395 199.8906,206.6957 Q199.3438,205.3364 199.3438,203.5395 Q199.3438,201.5082 200,200.0551 Q200.6563,198.602 201.9375,197.8207 Q203.2188,197.0395 205.0938,197.0395 Q205.9844,197.0395 206.6563,197.227 Q207.3281,197.3989 208.0156,197.7426 L207.2031,199.7582 Q206.5781,199.4457 206.0313,199.3207 Q205.5,199.1957 205.0156,199.1957 Q203.8438,199.1957 203.1406,199.727 Q202.4375,200.2582 202.1406,201.2114 Q201.8438,202.1645 201.8438,203.4301 Q201.8438,205.4457 202.5625,206.4145 Q203.2813,207.3676 204.875,207.3676 Q205.4688,207.3676 206.0938,207.2114 Q206.7188,207.0551 207.5469,206.6801 L207.5469,208.8989 Q206.8125,209.2114 206.0156,209.3676 Q205.2344,209.5239 204.4688,209.5239 Z " fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="218" x="219" y="207.258">ValorInicialDoDonoNaContaPatrimonio</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="191" x2="439" y1="218.602" y2="218.602"/>
+        <ellipse cx="201" cy="229.602" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="210" y="234.3609">valorInicial</text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="191" x2="439" y1="241.5839" y2="241.5839"/>
+        <!--MD5=[030fdf619354bfe666129e81fdcd44a5]
+reverse link br.edu.ifrn.conta.dominio.Categoria to br.edu.ifrn.conta.dominio.Conta-->
+        <path codeLine="21" d="M372.52,119.052 C381.71,132.072 392.84,145.812 405,156.602 C406.54,157.962 444.81,179.312 475.37,196.262 " fill="none" id="br.edu.ifrn.conta.dominio.Categoria-backto-br.edu.ifrn.conta.dominio.Conta" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="364.97,107.892,365.0183,115.1029,371.6932,117.8317,371.6448,110.6208,364.97,107.892" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="406" y="152.499">esta em uma</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="360.7283" y="129.5383">1</text>
+        <!--MD5=[8b4e0dd6cb659ec16b0406afff2024ef]
+reverse link br.edu.ifrn.conta.dominio.Dono to br.edu.ifrn.conta.dominio.Lancamento-->
+        <path codeLine="22" d="M61.35,120.952 C57.29,158.702 57.79,212.752 85,249.602 C144.89,330.692 267.21,359.192 336.39,369.042 " fill="none" id="br.edu.ifrn.conta.dominio.Dono-backto-br.edu.ifrn.conta.dominio.Lancamento" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="63.02,107.842,58.2933,113.2879,61.5024,119.7456,66.2291,114.2997,63.02,107.842" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="86" y="223.499">pertence a um</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="54.2129" y="129.4788">1</text>
+        <!--MD5=[a2aaeb79638e1f9f9623395db9254e40]
+reverse link br.edu.ifrn.conta.dominio.Conta to br.edu.ifrn.conta.dominio.Lancamento-->
+        <path codeLine="23" d="M463.69,246.822 C461.78,247.772 459.87,248.702 458,249.602 C425.98,264.902 403.83,250.172 384,279.602 C374.55,293.622 373.19,311.662 374.94,328.212 " fill="none" id="br.edu.ifrn.conta.dominio.Conta-backto-br.edu.ifrn.conta.dominio.Lancamento" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="475.44,240.712,468.2722,239.9231,464.7871,246.2362,471.955,247.025,475.44,240.712" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="385" y="294.499">conta entrada</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="460.6129" y="240.3677">1</text>
+        <!--MD5=[a2aaeb79638e1f9f9623395db9254e40]
+reverse link br.edu.ifrn.conta.dominio.Conta to br.edu.ifrn.conta.dominio.Lancamento-->
+        <path codeLine="24" d="M495.87,261.892 C489.89,274.342 482.51,287.542 474,298.602 C463.63,312.072 450.56,324.922 437.72,336.072 " fill="none" id="br.edu.ifrn.conta.dominio.Conta-backto-br.edu.ifrn.conta.dominio.Lancamento-1" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="501.37,249.812,495.2433,253.6151,496.3974,260.7332,502.5241,256.9301,501.37,249.812" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="68" x="487" y="294.499">conta saida</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="491.4858" y="271.443">1</text>
+        <!--MD5=[d31c82b632600a3124094aa69a1ddf71]
+reverse link br.edu.ifrn.conta.dominio.Dono to br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio-->
+        <path codeLine="25" d="M104.42,117.242 C118.22,131.112 134.83,145.842 152,156.602 C170.67,168.302 191.95,178.242 212.83,186.492 " fill="none" id="br.edu.ifrn.conta.dominio.Dono-backto-br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="95.35,107.852,96.6376,114.9472,103.6823,116.4875,102.3947,109.3923,95.35,107.852" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="153" y="152.499">pertence a um</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="92.7058" y="129.4907">1</text>
+        <!--MD5=[f5038bc4f52294298cb9fc582d06a410]
+reverse link br.edu.ifrn.conta.dominio.ContaPatrimonio to br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio-->
+        <path codeLine="26" d="M227.68,111.112 C237.56,125.432 249.48,142.102 261,156.602 C268.88,166.522 277.89,176.952 286.27,186.292 " fill="none" id="br.edu.ifrn.conta.dominio.ContaPatrimonio-backto-br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="220.25,100.222,220.3269,107.4327,227.0125,110.135,226.9356,102.9243,220.25,100.222" style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="55" x="262" y="152.499">e de uma</text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="216.1141" y="122.1562">1</text>
+        <!--MD5=[d912ca7621fbdba52283780cc4ee2070]
+link br.edu.ifrn.conta.dominio.ContaCredito to br.edu.ifrn.conta.dominio.Conta-->
+        <path codeLine="27" d="M598.99,100.222 C585.01,119.222 564.76,146.742 547.42,170.312 " fill="none" id="br.edu.ifrn.conta.dominio.ContaCredito-to-br.edu.ifrn.conta.dominio.Conta" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="552.94,174.632,535.44,186.592,541.66,166.332,552.94,174.632" style="stroke:#A80036;stroke-width:1.0;"/>
+        <!--MD5=[9531e7ed2d5fa883dfd82e0dad601ea5]
+link br.edu.ifrn.conta.dominio.ContaDebito to br.edu.ifrn.conta.dominio.Conta-->
+        <path codeLine="28" d="M482.94,100.222 C487.62,118.392 494.29,144.352 500.17,167.202 " fill="none" id="br.edu.ifrn.conta.dominio.ContaDebito-to-br.edu.ifrn.conta.dominio.Conta" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="506.95,165.482,505.16,186.592,493.39,168.972,506.95,165.482" style="stroke:#A80036;stroke-width:1.0;"/>
+        <!--MD5=[e42dfc2b3c8c27b39047b455011d3a9f]
+link br.edu.ifrn.conta.dominio.ContaPatrimonio to br.edu.ifrn.conta.dominio.Conta-->
+        <path codeLine="29" d="M253.69,100.162 C288.61,116.462 336.91,138.552 380,156.602 C409.71,169.052 421.24,170.652 457.13,186.842 " fill="none" id="br.edu.ifrn.conta.dominio.ContaPatrimonio-to-br.edu.ifrn.conta.dominio.Conta" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="460.32,180.602,475.49,195.392,454.4,193.292,460.32,180.602" style="stroke:#A80036;stroke-width:1.0;"/>
+        <!--MD5=[02cc07ae114d9a151cb9a5aa38f5c201]
+@startuml
+abstract class br.edu.ifrn.conta.dominio.Conta {
+ +descricao
+}
+class br.edu.ifrn.conta.dominio.Categoria {
+ +descricao
+}
+class br.edu.ifrn.conta.dominio.ContaCredito
+class br.edu.ifrn.conta.dominio.ContaDebito
+class br.edu.ifrn.conta.dominio.ContaPatrimonio
+class br.edu.ifrn.conta.dominio.Dono {
+ +descricao
+}
+class br.edu.ifrn.conta.dominio.Lancamento  {
+ +valor
+ +data
+ +descricao
+}
+class br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio {
+ +valorInicial
+}
+br.edu.ifrn.conta.dominio.Categoria "1" *- - br.edu.ifrn.conta.dominio.Conta : esta em uma
+br.edu.ifrn.conta.dominio.Dono "1" *- - br.edu.ifrn.conta.dominio.Lancamento : pertence a um
+br.edu.ifrn.conta.dominio.Conta "1" *- - br.edu.ifrn.conta.dominio.Lancamento : conta entrada
+br.edu.ifrn.conta.dominio.Conta "1" *- - br.edu.ifrn.conta.dominio.Lancamento : conta saida
+br.edu.ifrn.conta.dominio.Dono "1" *- - br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio : pertence a um
+br.edu.ifrn.conta.dominio.ContaPatrimonio "1" *- - br.edu.ifrn.conta.dominio.ValorInicialDoDonoNaContaPatrimonio : e de uma
+br.edu.ifrn.conta.dominio.ContaCredito - -|> br.edu.ifrn.conta.dominio.Conta
+br.edu.ifrn.conta.dominio.ContaDebito - -|> br.edu.ifrn.conta.dominio.Conta
+br.edu.ifrn.conta.dominio.ContaPatrimonio - -|> br.edu.ifrn.conta.dominio.Conta
+@enduml
+
+PlantUML version 1.2021.3(Mon Mar 22 13:53:19 BRT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+    </g>
+</svg>

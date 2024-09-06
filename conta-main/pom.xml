@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.2</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>br.edu.ifrn</groupId>
+    <artifactId>conta</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>21</java.version>
+        <springdoc.version>2.3.0</springdoc.version>
+
+        <decycle-maven-plugin.version>1.1.1</decycle-maven-plugin.version>
+
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>        
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-common</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>        
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>		
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-common</artifactId>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>		
+        -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>de.obqo.decycle</groupId>
+                    <artifactId>decycle-maven-plugin</artifactId>
+                    <version>${decycle-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <slicings>
+                            <slicing>
+                                <name>branches</name>
+                                <patterns>br.edu.ifrn.conta.*=base, br.edu.ifrn.conta.{*}.**</patterns>
+                                <constraints>
+                                    <allow>controller, service, domain</allow>
+                                    <allow>service, persistence, domain</allow>
+                                    <allow>
+                                        <one-of>controller, persistence</one-of>
+                                    </allow>
+                                    <allow>
+                                        <one-of>dto, domain</one-of>
+                                    </allow>
+                                    <allow>
+                                        <one-of>restclient, controller</one-of>
+                                        <any-of>dto</any-of>
+                                    </allow>
+                                    <allow>
+                                        <one-of>restclient, service</one-of>
+                                    </allow>
+                                    <allow>
+                                        <one-of>restclient, persistence</one-of>
+                                        <any-of>util</any-of>
+                                    </allow>
+                                    <allow>
+                                        <one-of>restclient, domain</one-of>
+                                    </allow>
+                                </constraints>
+                            </slicing>
+                        </slicings>
+                    </configuration>
+                </plugin>                
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-unit-test</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <sessionId>${project.artifactId}.unit-tests</sessionId>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>prepare-integration-test</id>
+                            <goals>
+                                <goal>prepare-agent-integration</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${project.build.directory}/jacoco.exec</destFile>
+                                <append>true</append>
+                                <sessionId>${project.artifactId}.integration-tests</sessionId>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>jacoco-report</id>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <argLine>@{argLine} -Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>                
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>@{argLine} -Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>                
+            <plugin>
+                <groupId>de.obqo.decycle</groupId>
+                <artifactId>decycle-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <name>conta</name>
+    <description>Conta do Desenvolvimento de Sistemas Corporativos</description>
+    <url>https://github.com/persapiens/conta</url>
+    <inceptionYear>2023</inceptionYear>
+
+    <!-- Issue Managment -->
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/persapiens/conta/issues</url>
+    </issueManagement>
+
+    <!-- SCM -->
+    <scm>
+        <connection>scm:git:https://github.com/persapiens/conta.git</connection>
+        <developerConnection>scm:git:https://github.com/persapiens/conta.git</developerConnection>
+        <url>scm:git:https://github.com/persapiens/conta.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <!-- Organization -->
+    <organization>
+        <name>Persapiens</name>
+        <url>https://github.com/persapiens</url>
+    </organization>
+    
+    <developers>
+        <developer>
+            <id>persapiens</id>
+            <name>Marcelo Romulo Fernandes</name>
+            <email>persapiens@gmail.com</email>
+            <timezone>-3</timezone>
+        </developer>
+    </developers>
+</project>

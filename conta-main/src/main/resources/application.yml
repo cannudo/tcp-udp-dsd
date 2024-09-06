@@ -1,0 +1,36 @@
+#spring: 
+#  datasource: 
+#    url: jdbc:postgresql://localhost:5432/conta
+#    username: conta
+#    password: conta
+# Number of ms to wait before throwing an exception if no connection is available.
+#    max-wait: 1000
+# Maximum number of active connections that can be allocated from this pool at the same time.
+#    max-active: 4
+# Validate the connection before borrowing it from the pool.
+#    test-on-borrow: true
+#    validationQuery: SELECT 1    
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+spring:
+  devtools:
+    restart:
+      enabled: true
+joinfaces:
+  faces:
+    project-stage: Development
+    facelets-refresh-period: 0  
+  primefaces:
+    theme: saga
+info:
+  url: @project.url@
+  version: @project.version@
+server:
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:baeldung.p12
+    key-store-password: 123456
+    key-alias: baeldung
+    enabled: true
